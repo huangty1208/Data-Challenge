@@ -39,6 +39,32 @@ rfecv = RFECV(
 _ = rfecv.fit(X_train_std, y_train)
 X_train.columns[rfecv.support_]
 
+lr_mask = rfecv.support_
+
+# ensemble feature selection
+
+%%time
+
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.linear_model import LinearRegression
+
+# Gradient Boosting Regressor
+rfecv = RFECV(
+    estimator=GradientBoostingRegressor(),
+    cv=3,
+    scoring="r2",
+    n_jobs=-1,
+    min_features_to_select=1,
+)
+_ = rfecv.fit(X_train, y_train)
+
+gb_mask = rfecv.support_
+
+
+votes = np.sum([gb_mask, lr_mask], axis=0)
+
+final_mask = votes == 2
+
 
 
 ### Pairwise - feature correlation 
