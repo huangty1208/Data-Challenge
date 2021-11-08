@@ -43,6 +43,8 @@ duplicates = dd.duplicated()
 dd.drop_duplicates(inplace=True)
 
 
-
+# exploratory
+dd.hist(figsize=(16, 16))
+dd.boxplot()
 
   
