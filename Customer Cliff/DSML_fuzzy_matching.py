@@ -65,3 +65,39 @@ full_census = census_a.append(unique_b)
 
 # end timer
 end = time.time()
+
+
+
+
+### fuzzywuzzy
+
+# Minimum Edit Distance (MED) is the least possible amount of steps needed to transition from one string to another. MED is calculated using only 4 operations, Insertion, Deletion, Substitution, Replacing consecutive characters
+
+from fuzzywuzzy import fuzz
+
+# The output returns a percentage between 0 and 100, 0 being not similar at all and 100 being identical:
+fuzz.WRatio('Python', 'Cython')
+
+
+# there are 4 other functions to compute string similarity:
+fuzz.ratio
+fuzz.partial_ratio
+fuzz.token_sort_ratio
+fuzz.token_set_ratio
+
+
+# Extract Best Matches to a String from a List of Options
+
+from fuzzywuzzy import process
+string_to_match = 'Mercedez-Benz'
+options = ['Ford', 'Mustang', 'mersedez benz', 'MAZDA', 'Mercedez']
+
+process.extract(query=string_to_match, choices=options, limit=3)  # can adjust scoring methods by setting scorer=fuzz.ratio
+
+
+
+
+
+
+
+
