@@ -2,3 +2,11 @@
 # logistic regression
 
 https://towardsdatascience.com/introduction-to-logistic-regression-66248243c148
+
+# naive bayes
+
+https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/
+
+# gradient descent
+
+https://towardsdatascience.com/gradient-descent-algorithm-and-its-variants-10f652806a3
