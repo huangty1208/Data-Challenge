@@ -1,0 +1,3 @@
+
+# logistic 
+https://towardsdatascience.com/introduction-to-logistic-regression-66248243c148
